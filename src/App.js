@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik } from 'formik';
+import { Formik, Field, FastField } from 'formik';
 
 const BasicExample = () => (
   <div>
@@ -12,7 +12,7 @@ const BasicExample = () => (
       render={props => (
         <form onSubmit={props.handleSubmit}>
           <br />
-          <input
+          <Field
             type="text"
             onChange={props.handleChange}
             onBlur={props.handleBlur}
@@ -20,7 +20,7 @@ const BasicExample = () => (
             name="name1"
           />
           <br />
-          <input
+          <FastField
             type="text"
             onChange={props.handleChange}
             onBlur={props.handleBlur}
@@ -42,6 +42,14 @@ const BasicExample = () => (
             onBlur={props.handleBlur}
             value={props.values.name4}
             name="name4"
+          />
+          <br />
+          <input
+            type="text"
+            onChange={props.handleChange}
+            onBlur={props.handleBlur}
+            value={props.values.name5}
+            name="name5"
           />
           {props.errors.name && <div id="feedback">{props.errors.name}</div>}
           <button type="submit">Submit</button>
